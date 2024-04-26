@@ -13,9 +13,11 @@ Below is a guide to:
 
 Install the client using conda or mamba.
 
-    mamba create -n kraken2 -c conda-forge -c epi2melabs kraken2-server
-    conda create -n kraken2 -c conda-forge -c epi2melabs kraken2-server
-    
+    mamba create -n kraken2 -c conda-forge -c nanoporetech kraken2-server=0.1.7
+    conda create -n kraken2 -c conda-forge -c nanoporetech kraken2-server=0.1.7
+
+**Ensure you are using the same version of kraken2_server. Currently this is 0.1.7**
+
 ### 2) Run the classifier from a remote server.
 
 Run the client on your set of reads.
@@ -25,7 +27,7 @@ Activate the conda env
 
 Run kraken2 client
     
-    kraken2_client --host-ip plum-g1 --sequence <sequence file> --report <report output destination + filename > kraken_output.kraken
+    kraken2_client --host-ip plum-g1 --sequence <sequence file> --report REPORTFILE.report > OUTPUTFILE.kraken
     
 If you want to loop across multiple files:
     
